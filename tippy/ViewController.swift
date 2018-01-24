@@ -18,7 +18,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Tip Calculator"
+        
+        // Access UserDefaults
+        let defaults = UserDefaults.standard
+        
+        let intValue = defaults.integer(forKey: "defaultTipIndex")
+        
+        
+        
+        tipControl.selectedSegmentIndex = intValue
+        
 
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

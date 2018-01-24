@@ -153,9 +153,35 @@
                     <view key="view" contentMode="scaleToFill" id="JtA-mq-kPP" customClass="Settings">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="CSB-MV-Wc9">
+                                <rect key="frame" x="16" y="155" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                    <segment title="25%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="updateDefaultTipPercentage:" destination="hBc-r7-Y32" eventType="editingChanged" id="JWR-dn-hXL"/>
+                                    <action selector="updateDefaultTipPercentage:" destination="hBc-r7-Y32" eventType="editingDidEnd" id="QeZ-D3-BaW"/>
+                                    <action selector="updateDefaultTipPercentage:" destination="hBc-r7-Y32" eventType="valueChanged" id="X8R-KJ-Xz6"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Tip Percentage (Persistent)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hrA-Tb-JNP">
+                                <rect key="frame" x="25" y="110" width="268" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="A8z-bn-eYa"/>
+                    <connections>
+                        <outlet property="TipPercentageSegment" destination="CSB-MV-Wc9" id="T56-vd-yil"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Isb-WK-4aQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
