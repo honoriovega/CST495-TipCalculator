@@ -16,13 +16,10 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        // Access UserDefaults
+        // Access UserDefaults - load the 
         let defaults = UserDefaults.standard
         
         let intValue = defaults.integer(forKey: "defaultTipIndex")
-        
-        
-        
         TipPercentageSegment.selectedSegmentIndex = intValue
         
         

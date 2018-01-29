@@ -28,8 +28,10 @@ class ViewController: UIViewController {
         
         tipControl.selectedSegmentIndex = intValue
         
+        // set the bill as first responder
+        billField.becomeFirstResponder()
 
-        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -58,7 +60,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         print("view did appear")
         
-       
+       // open the keyboard to enter the bill by default
         
     }
     
@@ -86,11 +88,17 @@ class ViewController: UIViewController {
         let bill = Double(billField.text!) ?? 0
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
-        
-        
-        
-        tipLabel.text = String.init(format: "$%.2f", tip)
-        totalLabel.text = String.init(format: "$%.2f", total)
+        let locale = Locale.current
+
+        let currencySymbol = locale.currencySymbol!
+
+        // "1,605,436" where Locale == en_US
+        let formattedTip = String(format: "%.2f", locale: Locale.current, Double(bill))
+        let formattedBill = String(format: "%.2f", locale: Locale.current, Double(total))
+                tipLabel.text = currencySymbol + formattedTip
+                totalLabel.text = currencySymbol + formattedBill
+//        tipLabel.text = String.init(format: "$%.2f", tip)
+//        totalLabel.text = String.init(format: "$%.2f", total)
     }
 }
 
